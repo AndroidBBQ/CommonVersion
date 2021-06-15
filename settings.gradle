@@ -1,0 +1,3 @@
+rootProject.name = "CommonDepends"
+include ':app'
+include ':authen'
