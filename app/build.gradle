@@ -1,16 +1,17 @@
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-}
+import com.sss.plugin.AndroidX
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.commondepends"
-        minSdkVersion 21
-        targetSdkVersion 29
+        applicationId ""
+        minSdkVersion rootProject.ext.BuildVersion.minSdkVersion
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -33,14 +34,9 @@ android {
 }
 
 dependencies {
-
-    implementation rootProject.ext.dependencies.kotlin_stdlib_jdk8
-
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0' //图表库
-
-
-    implementation project(":authen")
-
-
+    implementation(AndroidX.appcompat)
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }

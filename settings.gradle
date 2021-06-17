@@ -1,3 +1,5 @@
-rootProject.name = "CommonDepends"
+// 如果需要ComposingBuilds 1. 将下面的 includeBuild 放开
+//includeBuild 'version'
+rootProject.name = "TestComposingBuilds"
 include ':app'
-include ':authen'
+include ':mylibrary'
